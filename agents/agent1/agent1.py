@@ -41,7 +41,7 @@ class SourcingResult(BaseModel):
 
 def search_shopping_data(query: str) -> str:
     """Simulated product sourcing lookup."""
-    print(f"🔎 Searching for real-time price data on: {query}")
+    print(f"Searching for real-time price data on: {query}")
     mock_results = {
         "battery terminal": [
             {"vendor": "Amazon", "price": 12.99, "link": "https://amazon.com/terminal-cheap"},
