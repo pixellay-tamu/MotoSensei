@@ -1,0 +1,56 @@
+:root {
+    --carz-color-background: #111;
+    --carz-color-foreground: #fff;
+    --carz-color-background-translucent: #111111aa;
+    --carz-color-primary: #369;
+    --carz-color-disabled: #333;
+    --carz-color-bubble1: #6e1c1ccc;
+    --carz-color-bubble2: #336699cc;
+    --carz-border-radius: 1rem;
+}
+
+::selection {
+    background-color: var(--carz-color-primary);
+    color: var(--carz-color-foreground);
+}
+
+html.carz {
+    background-color: var(--carz-color-background);
+    color: var(--carz-color-foreground);
+}
+
+html.carz > body {
+    font-family: monospace;
+    margin: unset;
+}
+
+html.carz > body h1,
+html.carz > body h2,
+html.carz > body h3,
+html.carz > body h4,
+html.carz > body h5,
+html.carz > body h6,
+html.carz > body p {
+    line-height: 1;
+    margin: unset;
+}
+
+html.carz > body main {
+    height: 100vh;
+}
+
+html.carz > body main section > img:last-child {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: -1;
+    margin: unset;
+}
+
+html.carz > body img {
+    pointer-events: none;
+    user-select: none;
+}

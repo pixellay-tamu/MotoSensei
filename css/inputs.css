@@ -1,0 +1,42 @@
+html.carz > body input[type="file"]::file-selector-button,
+html.carz > body button {
+    background-color: var(--carz-color-primary);
+    color: var(--carz-color-foreground);
+    border: unset;
+    border-radius: 100rem;
+    font-weight: bold;
+    padding: 0.5rem 1.5rem;
+    box-sizing: border-box;
+    text-transform: uppercase;
+}
+
+html.carz > body input[type="file"]:not(:disabled)::file-selector-button:hover,
+html.carz > body button:not(:disabled):hover {
+    background-color: var(--carz-color-foreground);
+    color: var(--carz-color-primary);
+    cursor: pointer;
+}
+
+html.carz > body input[type="file"]:disabled::file-selector-button,
+html.carz > body button:disabled {
+    background-color: var(--carz-color-disabled);
+}
+
+html.carz > body input[type="text"] {
+    background-color: var(--carz-color-foreground);
+    color: var(--carz-color-background);
+    border: unset;
+    border-radius: 100rem;
+    outline: none;
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+
+html.carz > body textarea {
+    border: none;
+    border-radius: var(--carz-border-radius);
+    outline: none;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    transition: min-height 0.25s;
+}
