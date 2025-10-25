@@ -121,23 +121,23 @@ def generate_feedback(step, visual_detected, user_audio_text):
 
 def run_igqa(video_source_path: str, repair_steps_path: str):
     """Run the IGQA mechanic agent using an uploaded repair video and IGGA step JSON."""
-    print("🧠 Loading guide from IGGA output...")
+    print("Loading guide from IGGA output...")
     repair_steps = load_repair_steps_from_igga(repair_steps_path)
     if not repair_steps:
-        print("⚠️ No repair steps found.")
+        print("No repair steps found.")
         return
 
     print("🎥 Opening uploaded video stream...")
     vid = cv2.VideoCapture(video_source_path)
     if not vid.isOpened():
-        print("❌ Failed to open video file.")
+        print("Failed to open video file.")
         return
 
     audio_queue = queue.Queue()
     threading.Thread(target=record_audio, args=(audio_queue,), daemon=True).start()
 
     step_index = 0
-    print(f"🔧 Starting real-time mechanic guidance for {len(repair_steps)} steps")
+    print(f"Starting real-time mechanic guidance for {len(repair_steps)} steps")
 
     while step_index < len(repair_steps):
         ret, frame = vid.read()
@@ -149,8 +149,8 @@ def run_igqa(video_source_path: str, repair_steps_path: str):
         step = repair_steps[step_index]
 
         feedback = generate_feedback(step, visual_detected, user_audio or "")
-        print(f"\n🧰 Step {step_index+1}: {step['action']}")
-        print(f"💬 AI Mechanic Feedback:\n{feedback}\n")
+        print(f"\nStep {step_index+1}: {step['action']}")
+        print(f"AI Mechanic Feedback:\n{feedback}\n")
 
         cv2.putText(frame, f"Step {step_index+1}: {step['action']}",
                     (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 200, 0), 2)
@@ -163,7 +163,7 @@ def run_igqa(video_source_path: str, repair_steps_path: str):
 
     vid.release()
     cv2.destroyAllWindows()
-    print("✅ Guidance complete.")
+    print("Guidance complete.")
 
 
 # -------------------------------------------------------------------
@@ -175,5 +175,5 @@ if __name__ == "__main__":
     igga_guide_path = "latest_repair_guide.json"    # IGGA output file
     uploaded_video_path = "user_repair_video.mp4"   # Chatbot file upload
 
-    print("🦾 Starting Vertex AI IGQA agent...")
+    print("Starting Vertex AI IGQA agent...")
     run_igqa(uploaded_video_path, igga_guide_path)
