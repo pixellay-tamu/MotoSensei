@@ -75,7 +75,7 @@ def run_pisa(image_path: str) -> SourcingResult:
         parsed = json.loads(response.text)
         return SourcingResult(**parsed)
     except Exception as e:
-        print(f"⚠️ Error parsing PISA output: {e}")
+        print(f"Error parsing PISA output: {e}")
         print(response.text)
         raise
 
