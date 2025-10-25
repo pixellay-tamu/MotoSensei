@@ -21,6 +21,7 @@
     padding: 1rem;
     box-sizing: border-box;
     border-radius: var(--carz-border-radius) var(--carz-border-radius) 0 0;
+    z-index: 1;
 }
 
 .carz-input-bar > *:not(:first-child) {
@@ -71,10 +72,19 @@
     transform: translateX(-100%);
 }
 
-.carz-cloud {
+.carz-cloud-1,
+.carz-cloud-2 {
     position: absolute;
-    width: 200px;
+    width: 60%;
     height: auto;
-    bottom: 0;
-    transform: translateY(50%);
+    top: 75vh;
+    transform: translateY(-50%) scaleY(0.75);
+    mix-blend-mode: lighten;
+    opacity: 0.5;
+    filter: saturate(0.25);
+}
+
+.carz-cloud-2 {
+    left: 100%;
+    transform: translate(-100%, -50%) scaleY(0.75);
 }
