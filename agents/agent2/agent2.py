@@ -96,7 +96,7 @@ class RepairGuide(BaseModel):
 
 def general_web_search(query: str) -> str:
     """Mock web retrieval for repair guides."""
-    print(f"⚙️ IGGA is researching installation procedure for: {query}")
+    print(f"IGGA is researching installation procedure for: {query}")
     if "battery terminal" in query.lower():
         return (
             "Step 1: Turn off ignition and disconnect the negative cable using a 10mm wrench. "
@@ -132,7 +132,7 @@ def run_igga(part_name: str, model_year_vehicle: str = "Generic Vehicle") -> lis
         guide = json.loads(response.text)
         return guide.get("steps", [])
     except json.JSONDecodeError:
-        print("⚠️ Schema issue: returning empty guide.")
+        print("Schema issue: returning empty guide.")
         return []
 
 
