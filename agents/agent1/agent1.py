@@ -17,7 +17,7 @@ from google.genai import types
 
 # Load environment configuration securely
 os.environ["GOOGLE_GENAI_USE_VERTEXAI"] = "true"
-os.environ["GOOGLE_CLOUD_PROJECT"] = "your-project-id"
+os.environ["GOOGLE_CLOUD_PROJECT"] = "tamu-hackathon25cll-545"
 os.environ["GOOGLE_CLOUD_LOCATION"] = "us-central1"
 
 client = genai.Client()
