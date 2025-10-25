@@ -22,6 +22,7 @@ html.carz {
 html.carz > body {
     font-family: monospace;
     margin: unset;
+    overflow-x: hidden;
 }
 
 html.carz > body h1,
