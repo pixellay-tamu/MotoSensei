@@ -1,13 +1,3 @@
-#carz_logo {
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-55%, -80%);
-    border-radius: 25%;
-    height: 40%;
-    width: auto;
-}
-
 .carz-frame {
     display: flex;
     align-items: center;
@@ -53,6 +43,7 @@
 }
 
 .carz-chat {
+    position: relative;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
@@ -60,6 +51,7 @@
     max-width: min(150vw, 150vh);
     padding: 1rem;
     box-sizing: border-box;
+    overflow-y: scroll;
 }
 
 .carz-chat-bubble {
@@ -77,4 +69,12 @@
     background-color: var(--carz-color-bubble2);
     left: 100%;
     transform: translateX(-100%);
+}
+
+.carz-cloud {
+    position: absolute;
+    width: 200px;
+    height: auto;
+    bottom: 0;
+    transform: translateY(50%);
 }

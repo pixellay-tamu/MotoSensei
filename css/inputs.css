@@ -8,6 +8,8 @@ html.carz > body button {
     padding: 0.5rem 1.5rem;
     box-sizing: border-box;
     text-transform: uppercase;
+    transition-property: background-color, color;
+    transition-duration: 0.1s;
 }
 
 html.carz > body input[type="file"]:not(:disabled)::file-selector-button:hover,
